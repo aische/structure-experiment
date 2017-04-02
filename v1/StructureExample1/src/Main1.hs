@@ -129,7 +129,7 @@ getAge p = execState (foldS personF_getAge p) 0
 
 
 -- fold for reversing first- and lastname
-personF_reverseName :: Person (Func Identity (State FullName))
+personF_reverseName :: Person (Func Identity (State ()))
 personF_reverseName = personFold
   { firstname = foldFRead $ \s name -> List.reverse name
   , lastname = foldFRead $ \s name -> List.reverse name
@@ -137,7 +137,7 @@ personF_reverseName = personFold
 
 
 reverseName :: Person Identity -> Person Identity
-reverseName p = evalState (foldS personF_reverseName p) undefined
+reverseName p = evalState (foldS personF_reverseName p) ()
 
 
 -------------------------------------------------------------------------------
