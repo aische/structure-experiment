@@ -1,0 +1,16 @@
+
+resolver: lts-8.5
+
+
+packages:
+- '.'
+- '../Structure/'
+
+extra-deps: []
+
+
+flags: {}
+
+
+extra-package-dbs: []
+
